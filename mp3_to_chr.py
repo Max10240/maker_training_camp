@@ -2,7 +2,6 @@ import sys
 import json
 import base64
 import time
-
 IS_PY3 = sys.version_info.major == 3
 if IS_PY3:
     from urllib.request import urlopen
@@ -79,7 +78,7 @@ def fetch_token():
 """  TOKEN end """
 
 
-def change_to_chr(content='嘤嘤怪',AUDIO_FILE= '16k.pcm'):
+def change_to_chr(AUDIO_FILE= '16k.pcm'):
     #change(content)
     token = fetch_token()
     speech_data = []
@@ -116,7 +115,7 @@ def change_to_chr(content='嘤嘤怪',AUDIO_FILE= '16k.pcm'):
 
     if (IS_PY3):
         result_str = str(result_str, 'utf-8')
-    print(eval(result_str)['result'])
+    return (eval(result_str)['result'])
     '''with open("result.txt","w") as of:
         of.write(result_str)'''
 
